@@ -1,0 +1,40 @@
+<div class="loginBox">
+    <img src="https://cdn-icons-png.flaticon.com/512/219/219983.png" class="user">
+    <h2>Registrarse</h2>
+  
+  <form (ngSubmit)="onSubmit()" [formGroup]="register"> 
+
+    <div>
+        <label for="names">Nombre</label>
+        <input type="text" id="names" name="names" required formControlName="names">
+        <div *ngIf="register.get('names')?.invalid && register.get('names')?.touched" style="color:brown ;">
+          Este campo es requerido
+      </div>
+      </div>
+      
+      <div>
+        <label for="surnames">Apellidos</label>
+        <input type="text" id="surnames" name="surnames" required formControlName="surnames">
+        <div *ngIf="register.get('surnames')?.invalid && register.get('surnames')?.touched" style="color:brown ;">
+          Este campo es requerido
+      </div>
+      </div>
+      <div>
+        <label for="username">Usuario</label>
+        <input type="text" id="username" name="username" required formControlName="username">
+        <div *ngIf="register.get('username')?.invalid && register.get('username')?.touched" style="color:brown ;">
+            Este campo es requerido
+        </div>
+      </div>
+      <div>
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" required formControlName="password">
+        <div *ngIf="register.get('password')?.invalid && register.get('password')?.touched" style="color:brown ;">
+          Este campo es requerido
+      </div>
+      </div>
+
+  <button class="sumbit" type="submit"  class="btn btn-dark"  [disabled]="register.invalid">Ingresar</button>
+  
+  </form>
+  </div>
